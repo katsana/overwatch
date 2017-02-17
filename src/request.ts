@@ -56,10 +56,8 @@ export abstract class Request {
 
   /**
    * Dispatch request.
-   *
-   * @param {any} vehicles
    */
-  abstract dispatch(vehicles?: any): void;
+  abstract dispatch(): void;
 
   /**
    * Send request.

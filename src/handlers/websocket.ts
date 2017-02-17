@@ -12,10 +12,10 @@ class WebsocketRequest extends Request {
 
   /**
    * Dispatch request.
-   *
-   * @param {array} vehicles
    */
-  dispatch(vehicles?: Array<any>): void {
+  dispatch(): void {
+    let vehicles = this.listener.all;
+
     this.request.on('connect', () => {
       this.request.on('authenticated', () => {
         for (const vehicle of vehicles) {

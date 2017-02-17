@@ -4,10 +4,8 @@ import { Resolver } from '../resolver'
 class SseRequest extends Request {
   /**
    * Dispatch request.
-   *
-   * @param {array} vehicles
    */
-  dispatch(vehicles?: Array<any>): void {
+  dispatch(): void {
     this.request.addEventListener('message', e => {
       let response = $.parseJSON(e.data);
 
