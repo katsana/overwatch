@@ -46,7 +46,7 @@ class WebsocketRequest extends Request {
    */
   to(options: any = {}): this {
     this.token = options.token;
-    this.request = io(${options.url});
+    this.request = io(options.url);
 
     return this;
   }

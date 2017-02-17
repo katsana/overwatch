@@ -51,8 +51,7 @@ export abstract class Request {
    * Queue a request.
    */
   queue(): void {
-    let callback = () => this.send();
-    setInterval(callback, this.interval);
+    setInterval(() => this.send(), this.interval);
   }
 
   /**
