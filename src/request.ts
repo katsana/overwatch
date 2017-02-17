@@ -23,9 +23,9 @@ export abstract class Request {
   /**
    * Construct a new class.
    *
-   * @param {object} container
+   * @param {object} listener
    */
-  constructor(protected container: any) {
+  constructor(protected listener: any) {
     this.request = null;
   }
 
@@ -35,7 +35,7 @@ export abstract class Request {
    * @param {any} data
    */
   locate(data: any): void {
-    this.container.locate(data);
+    this.listener.locate(data);
   }
 
   /**
@@ -44,7 +44,7 @@ export abstract class Request {
    * @param {number = 200} status
    */
   update(status: number = 200): void {
-    this.container.update(status);
+    this.listener.update(status);
   }
 
   /**
