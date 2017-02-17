@@ -13,9 +13,9 @@ class XHttpRequest extends Request {
   /**
    * Dispatch request.
    *
-   * @param {any} beacons
+   * @param {array} vehicles
    */
-  dispatch(beacons?: any): void {
+  dispatch(vehicles?: Array<any>): void {
     Javie.on('Request.onComplete: katsana.overwatch', (data, status, self) => {
       if (status == 200)
         this.locate(data);

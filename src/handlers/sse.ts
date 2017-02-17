@@ -5,9 +5,9 @@ class SseRequest extends Request {
   /**
    * Dispatch request.
    *
-   * @param {any} vehicles
+   * @param {array} vehicles
    */
-  dispatch(vehicles?: any): void {
+  dispatch(vehicles?: Array<any>): void {
     this.request.addEventListener('message', e => {
       let response = $.parseJSON(e.data);
 

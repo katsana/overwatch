@@ -13,9 +13,9 @@ class WebsocketRequest extends Request {
   /**
    * Dispatch request.
    *
-   * @param {any} vehicles
+   * @param {array} vehicles
    */
-  dispatch(vehicles?: any): void {
+  dispatch(vehicles?: Array<any>): void {
     this.request.on('connect', () => {
       this.request.on('authenticated', () => {
         for (const vehicle of vehicles) {
