@@ -4,6 +4,20 @@ import { XHttp } from './handlers/xhttp'
 
 class Overwatch {
   /**
+   * The default driver name.
+   *
+   * @type {string}
+   */
+  protected name: string = 'sse';
+
+  /**
+   * List of drivers.
+   *
+   * @type {object}
+   */
+  protected drivers: any = {};
+
+  /**
    * Register SSE request.
    *
    * @return {Sse}
