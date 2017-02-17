@@ -14,7 +14,7 @@ class WebsocketRequest extends Request {
    * Dispatch request.
    */
   dispatch(): void {
-    let vehicles = this.listener.all;
+    let vehicles = this.listener.vehicles;
 
     this.request.on('connect', () => {
       this.request.on('authenticated', () => {
