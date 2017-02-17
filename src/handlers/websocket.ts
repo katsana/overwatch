@@ -56,13 +56,12 @@ export class Websocket extends Resolver {
   /**
    * Make websocket request.
    *
-   * @param {object} container
-   * @param {object} options
+   * @param {object} listener
    * @return {Request}
    */
-  make(container: any, options: any = {}) {
-    let request = new WebsocketRequest(container);
+  make(listener: any) {
+    let request = new WebsocketRequest(listener);
 
-    return request.to(options);
+    return request.to(this.options);
   }
 }

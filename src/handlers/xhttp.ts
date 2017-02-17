@@ -51,13 +51,12 @@ export class XHttp extends Resolver {
   /**
    * Make Xhttp request.
    *
-   * @param {object} container
-   * @param {object} options
+   * @param {object} listener
    * @return {Request}
    */
-  make(container: any, options: any = {}) {
-    let request = new XHttpRequest(container);
+  make(listener: any) {
+    let request = new XHttpRequest(listener);
 
-    return request.to(options);
+    return request.to(this.options);
   }
 }

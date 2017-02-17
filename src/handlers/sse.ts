@@ -40,13 +40,12 @@ export class Sse extends Resolver {
   /**
    * Make SSE request.
    *
-   * @param {object} container
-   * @param {object} options
+   * @param {object} listener
    * @return {Request}
    */
-  make(container: any, options: any = {}) {
-    let request = new SseRequest(container);
+  make(listener: any) {
+    let request = new SseRequest(listener);
 
-    return request.to(options);
+    return request.to(this.options);
   }
 }

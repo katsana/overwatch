@@ -2,11 +2,19 @@ import { Request } from './request'
 
 export abstract class Resolver {
   /**
+   * Construct a new class.
+   *
+   * @param {object} options
+   */
+  constructor(protected options: any = {}) {
+    //
+  }
+
+  /**
    * Make the request.
    *
-   * @param {object} container
-   * @param {object} options
+   * @param {object} listener
    * @return {Request}
    */
-   abstract make(container: any, options: any): Request;
+   abstract make(listener: any): Request;
 }
