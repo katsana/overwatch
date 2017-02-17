@@ -7,9 +7,7 @@
   "main": "dist/livefeed.js",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "socket.io-client": "^1.4.6",
-    "store2": "^2.5.0",
-    "underscore": "^1.8.3"
+    "socket.io-client": "^1.4.6"
   },
   "devDependencies": {
     "babel-plugin-transform-object-assign": "^6.8.0",
