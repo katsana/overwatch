@@ -41,7 +41,7 @@ class WebsocketRequest extends Request {
   /**
    * Set request endpoint.
    *
-   * @param  {string} url
+   * @param  {object} options
    * @return {this}
    */
   to(options: any = {}): this {

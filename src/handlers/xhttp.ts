@@ -30,7 +30,7 @@ class XHttpRequest extends Request {
    * Send request.
    */
   send(): void {
-    this.request.execute(this.container.current);
+    this.request.execute(this.listener.current);
   }
 
   /**
