@@ -1,6 +1,7 @@
 import { Request } from '../request'
 import { Resolver } from '../resolver'
-import io from 'socket.io-client'
+
+var io = require('socket.io-client')
 
 class WebsocketRequest extends Request {
   /**
