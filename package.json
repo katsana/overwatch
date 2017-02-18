@@ -1,10 +1,10 @@
 {
   "name": "katsana-overwatch",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": "KATSANA Developers",
   "description": "Live Feeds Services for KATSANA",
   "homepage": "https://github.com/katsana",
-  "main": "dist/livefeed.js",
+  "main": "dist/overwatch.js",
   "license": "BSD-2-Clause",
   "dependencies": {
     "socket.io-client": "^1.4.6"
