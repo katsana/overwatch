@@ -32,7 +32,7 @@ Overwatch.config({
 });
 ```
 
-### Streaming
+## Streaming
 
 Once configuration has been made, you can start streaming the data using the following:
 
