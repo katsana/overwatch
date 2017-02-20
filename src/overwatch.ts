@@ -63,7 +63,7 @@ class Overwatch {
   /**
    * Register SSE request.
    *
-   * @return {Sse}
+   * @return {Sse|XHttp}
    */
   private registerSseRequest(): Sse|XHttp {
     if (!window.EventSource) {
