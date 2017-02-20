@@ -65,7 +65,11 @@ class Overwatch {
    *
    * @return {Sse}
    */
-  private registerSseRequest(): Sse {
+  private registerSseRequest(): Sse|XHttp {
+    if (!window.EventSource) {
+      return this.registerXHttpRequest();
+    }
+
     return new Sse(Overwatch._config.sse);
   }
 
