@@ -51,11 +51,11 @@ class Listener {
     // return the current vehicle
   }
 
-  get all(): Array<any> {
+  get vehicles(): Array<any> {
     // return all vehicles
   }
 }
 
-var feed = new Overwatch(new Listener());
+var feed = new Overwatch();
 
-feed.driver('sse').dispatch(); // you can change the driver to "sse" or "websocket"
+feed.driver('sse').make(new Listener()).dispatch(); // you can change the driver to "sse" or "websocket"
