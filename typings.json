@@ -1,0 +1,7 @@
+{
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160524002506",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20161116080703",
+    "underscore": "registry:dt/underscore#1.8.3+20161123125004"
+  }
+}
