@@ -15,6 +15,8 @@ class WebsocketRequest extends Request {
    * Dispatch request.
    */
   dispatch(): void {
+    this.update(304);
+
     let vehicles = this.listener.vehicles;
 
     this.request.on('connect', () => {
@@ -29,7 +31,7 @@ class WebsocketRequest extends Request {
         }
       })
       .emit('authenticate', {token: this.token});
-    })
+    });
   }
 
   /**

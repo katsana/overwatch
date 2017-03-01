@@ -6,6 +6,8 @@ class SseRequest extends Request {
    * Dispatch request.
    */
   dispatch(): void {
+    this.update(304);
+
     this.request.addEventListener('message', e => {
       let response = $.parseJSON(e.data);
 
