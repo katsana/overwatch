@@ -18,12 +18,12 @@ interface Listener {
    *
    * @return {array}
    */
-  get all(): Array<any>;
+  get vehicles(): Array<any>;
 
   /**
    * Get the current vehicle.
    *
    * @return {object}
    */
-  get current(): any;
+  get vehicle(): any;
 }
