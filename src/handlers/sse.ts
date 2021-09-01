@@ -9,7 +9,7 @@ class SseRequest extends Request {
     this.update(304);
 
     this.request.addEventListener('message', e => {
-      let response = $.parseJSON(e.data);
+      let response = JSON.parse(e.data);
 
       if (response.status == 200)
         this.locate(response.data);
