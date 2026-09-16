@@ -2,6 +2,8 @@ import { Request } from '../request'
 import { Resolver } from '../resolver'
 
 class XHttpRequest extends Request {
+  private eventHandler: any;
+
   /**
    * Request interval.
    *
@@ -17,7 +19,7 @@ class XHttpRequest extends Request {
   dispatch(): void {
     this.update(304);
 
-    Javie.on('Request.onComplete: katsana.overwatch', (data, status, self) => {
+    this.eventHandler = Javie.make('event').listen('Request.onComplete: katsana.overwatch', (data, status, self) => {
       if (status == 200)
         this.locate(data);
 
@@ -25,6 +27,14 @@ class XHttpRequest extends Request {
     });
 
     this.queue();
+  }
+
+  close(): void {
+    if (this.eventHandler) {
+      Javie.make('event').forget(this.eventHandler);
+      this.eventHandler = null;
+    }
+    super.close();
   }
 
   /**

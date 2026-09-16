@@ -6,6 +6,8 @@ interface Listener {
    */
   locate(data: any): void;
 
+  status?(data: any): void;
+
   /**
    * Update the listener with response status.
    *

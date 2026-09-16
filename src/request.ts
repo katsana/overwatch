@@ -20,6 +20,8 @@ export abstract class Request {
    */
   protected request: any;
 
+  private timer?: ReturnType<typeof setInterval>;
+
   /**
    * Construct a new class.
    *
@@ -38,6 +40,20 @@ export abstract class Request {
     this.listener.locate(data);
   }
 
+  status(data: any): void {
+    if (typeof this.listener.status === 'function') {
+      this.listener.status(data);
+    }
+  }
+
+  close(): void {
+    clearInterval(this.timer);
+    this.timer = undefined;
+    if (this.request && typeof this.request.close === 'function') {
+      this.request.close();
+    }
+  }
+
   /**
    * Update status.
    *
@@ -51,7 +67,8 @@ export abstract class Request {
    * Queue a request.
    */
   queue(): void {
-    setInterval(() => this.send(), this.interval);
+    clearInterval(this.timer);
+    this.timer = setInterval(() => this.send(), this.interval);
   }
 
   /**

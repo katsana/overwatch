@@ -15,6 +15,11 @@ class Overwatch {
     xhttp: {}
   };
 
+  // Retained for hosts that suppress their fallback socket while a feed is active.
+  static get _connected(): boolean {
+    return Websocket.activeRequests > 0;
+  }
+
   /**
    * The default driver name.
    *
@@ -53,7 +58,7 @@ class Overwatch {
    * @return {Resolver}
    */
   driver(service: string): Resolver {
-    if (this.drivers[service] !== null) {
+    if (!this.drivers[service]) {
       this.drivers[service] = this.createDriver(service);
     }
 
@@ -97,8 +102,8 @@ class Overwatch {
    * @param {any} options
    */
   static config(options: any) {
-    Overwatch._config = _.extend(Overwatch._config, options);
+    Overwatch._config = Object.assign({}, Overwatch._config, options);
   }
 }
 
-module.exports = Overwatch;
+export default Overwatch;
